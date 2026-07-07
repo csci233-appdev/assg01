@@ -1,0 +1,13 @@
+set script [lindex $argv 0]
+set input  [lindex $argv 1]
+set inputfh [open $input r]
+spawn -noecho python3 $script
+while {[gets $inputfh line] != -1} {
+  expect {
+    -re "(.+)" {
+        send "$line\n"
+    }
+  }
+}
+close $inputfh
+interact
