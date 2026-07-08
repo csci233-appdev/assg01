@@ -1,0 +1,7 @@
+Enter rectangle 1 length: 8
+Enter rectangle 1 width: 4
+Enter rectangle 2 length: 4
+Enter rectangle 2 width: 8
+rectangle 1 area:  32.0
+rectangle 2 area:  32.0
+The rectangles have equal areas
