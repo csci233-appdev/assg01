@@ -1,7 +1,7 @@
-Enter rectangle 1 length: 8
-Enter rectangle 1 width: 4
-Enter rectangle 2 length: 4
-Enter rectangle 2 width: 7
-rectangle 1 area:  32.0
-rectangle 2 area:  28.0
+Enter rectangle 1 length: 8.5
+Enter rectangle 1 width: 4.25
+Enter rectangle 2 length: 4.25
+Enter rectangle 2 width: 7.12
+rectangle 1 area 36.1250
+rectangle 2 area 30.2600
 Rectangle 1 has the greater area
