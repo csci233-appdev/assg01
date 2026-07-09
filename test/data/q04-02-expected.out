@@ -1,0 +1,5 @@
+Enter the original principal amount (P): 10000.00
+Enter the annual interest rate percentage (r): 3
+Enter the number of times per year interest is compounded (n): 365
+Enter the number of years to compound (t): 20
+The amount in the account after compounding interest 18220.738744508068

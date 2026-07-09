@@ -1,0 +1,2 @@
+Enter roulette wheel pocket number: 42
+Error: pocket number must be a value in the range 0 to 36, you entered 42

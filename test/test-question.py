@@ -16,6 +16,7 @@ import sys
 # constants for colored terminal output (https://misc.flogisoft.com/bash/tip_colors_and_formatting)
 GREEN="\033[1m\033[92m" # this is actually bold light green
 RED="\033[1m\033[91m"   # bold light red
+BLUE="\033[1m\033[34m"  # default blue
 NORMAL="\033[0m"
 
 
@@ -74,13 +75,15 @@ def parse_args():
     # if not using terminal output colors, just empty string the color
     # terminal settings so nothing happens when used
     if not args.color:
-        args.GREEN=''
-        args.RED=''
-        args.NORMAL=''
+        args.GREEN = ''
+        args.RED = ''
+        args.BLUE = ''
+        args.NORMAL = ''
     else:
-        args.GREEN=GREEN
-        args.RED=RED
-        args.NORMAL=NORMAL
+        args.GREEN = GREEN
+        args.RED = RED
+        args.BLUE = BLUE
+        args.NORMAL = NORMAL
 
     # ensure that the output directory exists to place output from test
     # runs into
@@ -160,8 +163,8 @@ def get_test_files(args, testnum, test=True):
     This method will print an error message and return exit status of 1
     (error) if the asked for file does not actually exist.
     """
-    input_file = f'{args.test_directory}/{args.question_prefix}-{testnum:02d}-input.dat'
-    expected_output_file = f'{args.test_directory}/{args.question_prefix}-{testnum:02d}-expected.out'
+    input_file = f'{args.test_directory}/data/{args.question_prefix}-{testnum:02d}-input.dat'
+    expected_output_file = f'{args.test_directory}/data/{args.question_prefix}-{testnum:02d}-expected.out'
     output_file = f'{args.output_directory}/{args.question_prefix}-{testnum:02d}-actual.out'
 
     # perform error checking, the error here usually means an invalid test number
@@ -280,12 +283,12 @@ def check_test_passed(args, testnum, output_file, expected_output_file):
 
     # if files differ, the test fails and we display failure results
     if diff_file_output(args, student_output, expected_output):
-        print(f'Question <{args.question_prefix}> Test {testnum:02d}: {args.RED} FAILED {args.NORMAL}')
+        print(f'Question {args.BLUE}<{args.question_prefix}>{args.NORMAL} Test {args.BLUE}{testnum:02d}{args.NORMAL}: {args.RED} FAILED {args.NORMAL}')
         report_diff_file_output(args, student_output, expected_output)
         return False
     # if files do not differ, test passes
     else:
-        print(f'Question <{args.question_prefix}> Test {testnum:02d}: {args.GREEN} PASSED {args.NORMAL}')
+        print(f'Question {args.BLUE}<{args.question_prefix}>{args.NORMAL} Test {args.BLUE}{testnum:02d}{args.NORMAL}: {args.GREEN} PASSED {args.NORMAL}')
         return True
 
 
