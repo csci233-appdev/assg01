@@ -30,8 +30,6 @@ Python, using variables and performing calculations, and creating
 conditional statements (`if` / `elif` / `else`) to make decisions
 in programs.
 
-
-
 ## Assignment Prerequisites and Setup
 
 You will need to have completed the following setup before you can
@@ -49,9 +47,9 @@ the following tasks already completed.
    will work on these assignments with, that you can run Python scripts
    and the Python IDLE interface within.
 
-See our class `Getting Started` for links on setting up these needed
-tools and configurations if you have not yet completed them before
-beginning this assignment.
+See our class 
+[Getting Started with Python and Git for Class Assignments](https://github.com/etamu-class/python-git)
+for links on setting up these needed development environment tools and configuration.
 
 
 # Assignment Questions

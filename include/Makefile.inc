@@ -68,8 +68,9 @@ $(OBJ_DIR):
 
 ## unit-tests   : Run the unit tests showing failing tests only
 ##
-unit-tests : $(TEST_TARGET)
-	./$(TEST_TARGET) --use-colour yes
+.PHONY : unit-tests
+unit-tests :
+	python3 -m unittest test/test_assignment.py
 
 ## system-tests : Run the system tests on the full simulation
 ##
@@ -98,7 +99,7 @@ refdocs :
 ##                build the assgdocs
 ##                
 ##                $ sudo apt update
-##                $ sudo apt install -y pandoc python3-pweave texlive texlive-fonts-recommended texlive-latex-recommended biber texlive-bibtex-extra texlive-fonts-extra texlive-science
+##                $ sudo apt install -y pandoc python3-pweave texlive texlive-fonts-recommended texlive-latex-recommended biber texlive-bibtex-extra texlive-fonts-extra texlive-science ghostscript
 ##
 .PHONY : assgdocs
 assgdocs : $(assg_doc)

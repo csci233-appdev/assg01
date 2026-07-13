@@ -1,5 +1,5 @@
 # select python base container environment to use
-FROM python:3.13
+FROM python:3.14
 
 # set a user to run the dev container code in and correct
 # map uid/gid into when using container
